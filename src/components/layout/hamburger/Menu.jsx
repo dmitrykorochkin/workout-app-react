@@ -13,7 +13,8 @@ const Menu = ({ isShow }) => {
 		>
 			<ul>
 				{menu.map((item, index) => (
-					<li key={index}>
+					<li key={`_menu_${index}`}>
+            {item.title}
 						{/* <Link to={item.link}>{item.title}</Link> */}
 					</li>
 				))}
