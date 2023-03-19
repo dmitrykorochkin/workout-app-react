@@ -11,9 +11,9 @@ const Hamburger = () => {
 		<div className={styles.wrapper} ref={ref}>
 			<button onClick={() => setIsShow(!isShow)}>
 				{isShow ? (
-					<AiOutlineClose color='white' />
+					<AiOutlineClose  />
 				) : (
-					<BiMenuAltRight color='white' />
+					<BiMenuAltRight  />
 				)}
 			</button>
 			<Menu isShow={isShow} />
