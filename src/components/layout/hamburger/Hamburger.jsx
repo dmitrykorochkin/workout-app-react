@@ -1,16 +1,20 @@
-import { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/Ai'
 import { BiMenuAltRight } from 'react-icons/Bi'
 import Menu from './Menu'
 import styles from './Hamburger.module.scss'
+import { useOnClickOutside } from './../../../hooks/useOnClickOutside'
 
 const Hamburger = () => {
-	const [isShow, setIsShow] = useState(false)
+	const { isShow, ref, setIsShow } = useOnClickOutside(false)
 
 	return (
-		<div className={styles.wrapper}>
+		<div className={styles.wrapper} ref={ref}>
 			<button onClick={() => setIsShow(!isShow)}>
-				{isShow ? <AiOutlineClose color='white' /> : <BiMenuAltRight color='white' />}
+				{isShow ? (
+					<AiOutlineClose color='white' />
+				) : (
+					<BiMenuAltRight color='white' />
+				)}
 			</button>
 			<Menu isShow={isShow} />
 		</div>

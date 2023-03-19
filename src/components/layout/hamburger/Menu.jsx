@@ -2,7 +2,6 @@ import cn from 'clsx'
 import { menu } from './menu.data'
 import styles from './Hamburger.module.scss'
 
-
 const Menu = ({ isShow }) => {
 	const logoutHandler = () => {}
 	return (
@@ -14,7 +13,7 @@ const Menu = ({ isShow }) => {
 			<ul>
 				{menu.map((item, index) => (
 					<li key={`_menu_${index}`}>
-            {item.title}
+						{item.title}
 						{/* <Link to={item.link}>{item.title}</Link> */}
 					</li>
 				))}
