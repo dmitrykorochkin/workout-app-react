@@ -1,19 +1,26 @@
-import { useAuth } from "../../../hooks/useAuth"
+import { useAuth } from '../../../hooks/useAuth'
 import { AiOutlineArrowLeft } from 'react-icons/Ai'
-import Hamburger from "../hamburger/Hamburger"
-import styles from "./Header.module.scss"
-
-
+import Hamburger from '../hamburger/Hamburger'
+import styles from './Header.module.scss'
+import { useLocation, useNavigation } from 'react-router-dom'
 
 const Header = ({ backLink }) => {
+	const { pathname } = useLocation()
+	const navigate = useNavigation()
 
-  const {} = useAuth()
+	const { isAuth } = useAuth()
 	return (
 		<header className={styles.header}>
-			<button onClick={() => {}}>
-        <AiOutlineArrowLeft />
-      </button>
-      <Hamburger/>
+			{pathname !== '/' && (
+				<button
+					onClick={() => {
+						navigate(backLink || '/')
+					}}
+				>
+					<AiOutlineArrowLeft />
+				</button>
+			)}
+			<Hamburger />
 		</header>
 	)
 }
