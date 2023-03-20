@@ -11,7 +11,9 @@ const Router = () => {
 		<BrowserRouter>
 			<Routes>
 				{routes.map(route => {
-					if(route.isAuth && !isAuth)
+					if(route.isAuth && !isAuth) {
+						return false
+					}
 				return (<Route
 						key={route.path}
 						path={route.path}
