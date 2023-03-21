@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import Button from './../../ui/button/Button'
 
 const Auth = () => {
-	const { register, handleSubmit } = useForm({
+	const { register, handleSubmit, formState: { errors} } = useForm({
 		mode: 'onChange'
 	})
 
